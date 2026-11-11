@@ -119,8 +119,8 @@ data/          SQLite、日报快照、原始采集缓存与私有输入（全�
 - **新增一类数据**：先归入 日线/净值/持仓/份额/汇率；没有现成表就加 `migrations/000N_*.sql`；
   抓取放 `collector/` 并带缓存与 `--refresh`；SQL 必须幂等；口径（净值 vs 场内价、T-1、缺失不填 0）
   写进注释与文档。
-- **未启用的表**（`estimate`/`alert`/`lookthrough_exposure`/`ingest_batch`/`position_lot`/`bucket*` 的部分列）
-  是预留结构；不要因为表存在就假设有数据。
+- **未启用的表**（`estimate`/`alert`/`lookthrough_exposure`/`ingest_batch`/`position_lot`）
+  是预留结构；不要因为表存在就假设有数据。`bucket`/`bucket_member` 已启用，服务从前者读分类、从后者读成员。
 
 ## 本机私有状态
 

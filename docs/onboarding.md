@@ -150,8 +150,10 @@ data/private/
 | 字段 | 用途 |
 |---|---|
 | `ground_truth_pct` | `{基金代码: 当日涨跌百分数}`；`build_seed.py` 用它做交叉核对，缺失则跳过 |
-| `us_secids` | 已带 `US.` 前缀的持仓缺少 `instruments.secid` 时的补充映射 |
 | `notes` | 任意备注，会写进 `fund.notes` |
+
+> 已带 `US.` 前缀的持仓必须在 `instruments` 里提供 `secid`（例如 `US.XOP` → `107.XOP`）；
+> `build_history.py` 不会在代码里写死 ticker。
 
 ## 4. `portfolio_<date>.json`
 

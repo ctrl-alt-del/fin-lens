@@ -80,7 +80,7 @@ fin-lens seed seeds/history_<as_of>.sql
 
 - `funds_source.ground_truth_pct`：`{基金代码: 当日涨跌百分数}`，`build_seed.py` 用它做交叉核对；
   缺失则跳过，不影响估值。
-- `funds_source.us_secids` 或 `instruments[*].secid`：美股/汇率标的的东财 secid；
+- `instruments[*].secid`：美股/汇率标的的东财 secid（例如 `US.XOP` → `107.XOP`）；
   `build_history.py` 从私有 `instruments` 读取，不在脚本里写死 ticker。
 - `portfolio.buckets`：桶代码 → 基金代码数组。桶代码：
   `gold`, `nonferrous`, `broad_index`, `oil`, `semiconductor`, `medical`, `optical`, `compute`。
