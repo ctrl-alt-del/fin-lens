@@ -92,7 +92,7 @@ secid 市场前缀：`1`=上交所（6/688）、`0`=深交所（0/3）、`116`=�
 2. **接解析**：东财代码 → `instrument.code` 用前缀式 `SH./SZ./HK./US./IDX./ETF./AU./FX.`；
    在 `build_seed.py` 的 `secid_for_stock`/`exchange_of`/`currency_of` 里补规则。
 3. **抓取与缓存**：放 `collector/build_*.py`，缓存到 `.cache/<name>/`，提供 `--refresh`；
-   缓存键必须含日期/URL，避免拿旧数据当新数据。
+   缓存键尽量含日期/URL；跨日重跑用 `--refresh`，避免拿旧数据当新数据。
 4. **写 SQL 要幂等**：`INSERT … ON CONFLICT DO UPDATE`（可修正）或 `DO NOTHING`（只补历史）；
    生成物放 `seeds/`，不手改。
 5. **口径写清楚**：ETF/黄金用基金净值不用场内价；QDII 用 T-1 + 汇率；缺失不填 0，打 flag。
@@ -118,7 +118,7 @@ secid 市场前缀：`1`=上交所（6/688）、`0`=深交所（0/3）、`116`=�
 | 服务与 seed 并发启动 | `duplicate column name` 迁移竞态 | 先单独启动/编译一次，再跑 seed |
 | holding 里手工行与 ETF 展开行并存 | 穿透权重重复 | `build_etf_lookthrough` 先 DELETE 再写 |
 | 缺行情填 0% | 估值“看起来正常” | 滚入残余仓位 + `missing_holding_quote`，覆盖率下降 |
-| 缓存不刷新 | 拿到昨天的行情 | `--refresh`；缓存键含日期 |
+| 缓存不刷新 | 拿到昨天的行情 | `--refresh`；新缓存键尽量含日期 |
 | 重生成持仓不清旧 trade 行 | 同一只基金残留多个版本的流水 | seed 前 `DELETE FROM trade WHERE source='handoff' AND trade_date=<D>`；真实流水不删 |
 | 重生成桶成员不清旧行 | 基金换桶后旧成员残留 | `build_portfolio.py` 先 `DELETE FROM bucket_member WHERE note LIKE 'handoff_%'` |
 | 改了已应用的迁移 | `sqlx` checksum 失败 | 新增 migration；首次公开提交前必须重建数据库并重跑 `validate` |

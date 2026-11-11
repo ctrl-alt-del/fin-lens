@@ -74,7 +74,7 @@ fin-lens seed seeds/history_<as_of>.sql
 - `build_seed.py` / `build_portfolio.py` / `build_etf_lookthrough.py` 使用 `.cache/seed/`。
 - `build_history.py` 使用 `.cache/history/`。
 - `--refresh` 绕过缓存重新抓取；不刷新时用缓存，适合复现同一天的种子。
-- 缓存键含请求日期/URL；不要把旧数据当新数据。
+- 缓存键尽量含请求日期/URL；跨日刷新用 `--refresh`，不要把旧数据当新数据。
 
 ## 可选字段
 
