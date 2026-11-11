@@ -35,7 +35,7 @@ curl -s localhost:8787/api/lookthrough | jq
 3. 运行 `python3 collector/validate_inputs.py` 做离线结构校验。
 4. 按顺序生成种子并灌库（见 onboarding）。
 
-真实输入不在仓库里；新克隆只有 DEMO 数据。
+真实输入不在仓库里；新克隆默认是空库，可用 `FINLENS_SEED_DEMO=1` 看 DEMO。
 
 ### 环境变量
 
