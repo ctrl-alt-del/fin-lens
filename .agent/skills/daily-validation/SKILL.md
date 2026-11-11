@@ -26,7 +26,7 @@ export CARGO_HOME="$PWD/.cargo-home"
 cargo build
 
 # 1) 跑验证（日期必须是已公布净值的交易日）
-./target/debug/fin-lens validate <published-nav-date>
+./target/debug/fin-lens validate YYYY-MM-DD
 ```
 
 命令会：取 `quote_daily` 当天的涨跌 → 逐只基金用 `service::estimate_fund` 估算 →

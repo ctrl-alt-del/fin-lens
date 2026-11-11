@@ -16,16 +16,16 @@
 ```text
 data/private/
 ├── funds_source.json
-└── portfolio_<as_of>.json
+└── portfolio_YYYY-MM-DD.json
 ```
 
 默认输出：
 
 ```text
 seeds/funds.sql
-seeds/portfolio_<as_of>.sql
-seeds/etf_lookthrough_<as_of>.sql
-seeds/history_<as_of>.sql
+seeds/portfolio_YYYY-MM-DD.sql
+seeds/etf_lookthrough_YYYY-MM-DD.sql
+seeds/history_YYYY-MM-DD.sql
 ```
 
 路径与日期都来自私有 JSON；可以用 `--private-dir`、`--portfolio`、`--funds`、`--out` 覆盖。
@@ -52,9 +52,9 @@ python3 collector/build_etf_lookthrough.py
 python3 collector/build_history.py
 
 fin-lens seed seeds/funds.sql
-fin-lens seed seeds/portfolio_<as_of>.sql
-fin-lens seed seeds/etf_lookthrough_<as_of>.sql
-fin-lens seed seeds/history_<as_of>.sql
+fin-lens seed seeds/portfolio_YYYY-MM-DD.sql
+fin-lens seed seeds/etf_lookthrough_YYYY-MM-DD.sql
+fin-lens seed seeds/history_YYYY-MM-DD.sql
 ```
 
 `build_etf_lookthrough.py` 依赖前两步已经写入的 holding 行；它会先 DELETE 同一报告期

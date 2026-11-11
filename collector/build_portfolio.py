@@ -6,7 +6,7 @@
   funds_source.json  基金身份、基准与季报持仓
 
 输出：
-  seeds/portfolio_<as_of>.sql（可用 `--out` 覆盖）
+  seeds/portfolio_YYYY-MM-DD.sql（可用 `--out` 覆盖）
 
 口径：
   * 份额 = 市值 / nav_date 单位净值；

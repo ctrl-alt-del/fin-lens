@@ -37,13 +37,13 @@ python3 collector/build_etf_lookthrough.py
 
 # 3) 灌库（幂等；重复执行不会重复插入）
 ./target/debug/fin-lens seed seeds/funds.sql
-./target/debug/fin-lens seed seeds/portfolio_<as_of>.sql
-./target/debug/fin-lens seed seeds/etf_lookthrough_<as_of>.sql
+./target/debug/fin-lens seed seeds/portfolio_YYYY-MM-DD.sql
+./target/debug/fin-lens seed seeds/etf_lookthrough_YYYY-MM-DD.sql
 # 若刚改过 Rust 代码：先 cargo build
 
 # 4) 每月一次 / 首次回填：一年净值与日线（历史数据不会每天变）
 python3 collector/build_history.py
-./target/debug/fin-lens seed seeds/history_<as_of>.sql
+./target/debug/fin-lens seed seeds/history_YYYY-MM-DD.sql
 ```
 
 `build_seed.py` 会打印行数与 ground-truth 比对结果；配置了 `ground_truth_pct` 的基金应全部一致。

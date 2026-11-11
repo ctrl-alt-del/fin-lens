@@ -45,7 +45,7 @@ tracking_beta / notes / holdings[[原始代码, 名称, 权重]]`。顶层还有
 5. **回归验证**（用最近一个已公布净值的交易日）：
 
    ```bash
-   ./target/debug/fin-lens validate <published-nav-date>
+   ./target/debug/fin-lens validate YYYY-MM-DD
    ```
 
    新基金若没有 11-04 净值，会被列入"跳过"——在答复里说明，不要伪造前值。
@@ -54,7 +54,7 @@ tracking_beta / notes / holdings[[原始代码, 名称, 权重]]`。顶层还有
 
 ```bash
 sqlite3 data/finlens.db "SELECT code, name, mode, benchmark_code FROM fund ORDER BY code;"
-curl -s http://127.0.0.1:8787/api/funds/<code>/estimate | head -c 600
+curl -s http://127.0.0.1:8787/api/funds/CODE/estimate | head -c 600
 ```
 
 期望：`/api/funds` 数量 +1；estimate 返回 200，`prev_nav_date` 是最近交易日，

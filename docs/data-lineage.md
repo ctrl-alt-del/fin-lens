@@ -24,7 +24,7 @@ pingzhongdata + kline ───────→ build_history.py ─────�
 日期与路径来自私有 JSON：
 
 - `funds_source.json`：`report_date`、`validation_date`、`snapshot_date`。
-- `portfolio_<as_of>.json`：`as_of`、`nav_date`、`report_date`。
+- `portfolio_YYYY-MM-DD.json`：`as_of`、`nav_date`、`report_date`。
 - CLI 可用 `--private-dir`、`--portfolio`、`--funds`、`--out` 覆盖；默认自动发现唯一的
   `data/private/portfolio_*.json`。
 
@@ -50,9 +50,9 @@ secid 市场前缀：`1`=上交所（6/688）、`0`=深交所（0/3）、`116`=�
 | 顺序 | 命令 | 产出 | 说明 |
 |---|---|---|---|
 | 1 | `python3 collector/build_seed.py --refresh` | `seeds/funds.sql` | 基金主档、季报持仓、资产配置、验证日行情 |
-| 2 | `python3 collector/build_portfolio.py` | `seeds/portfolio_<as_of>.sql` | 份额/成本/交易/A-C/资源桶；新标的行情 |
-| 3 | `python3 collector/build_etf_lookthrough.py` | `seeds/etf_lookthrough_<as_of>.sql` | **先 DELETE** 相关基金旧 holding，再写 ETF 前十大/黄金代理 |
-| 4 | `python3 collector/build_history.py` | `seeds/history_<as_of>.sql` | 一年净值 + 日线；`ON CONFLICT DO NOTHING` |
+| 2 | `python3 collector/build_portfolio.py` | `seeds/portfolio_YYYY-MM-DD.sql` | 份额/成本/交易/A-C/资源桶；新标的行情 |
+| 3 | `python3 collector/build_etf_lookthrough.py` | `seeds/etf_lookthrough_YYYY-MM-DD.sql` | **先 DELETE** 相关基金旧 holding，再写 ETF 前十大/黄金代理 |
+| 4 | `python3 collector/build_history.py` | `seeds/history_YYYY-MM-DD.sql` | 一年净值 + 日线；`ON CONFLICT DO NOTHING` |
 | 5 | `./target/debug/fin-lens seed <文件>` | 写库 | 按 1→4 顺序灌，幂等 |
 
 顺序不能乱：第 3 步依赖第 1、2 步已经写入的 holding 行（它先删后写）；第 4 步是补历史，
@@ -144,7 +144,7 @@ curl -s localhost:8787/api/estimates | jq '{as_of, count, skipped}'
 curl -s localhost:8787/api/lookthrough | jq '{attributed: .report.attributed_weight, alerts: [.report.alerts[] | {name, severity}]}'
 
 # 盘后对账
-./target/debug/fin-lens validate <published-nav-date>
+./target/debug/fin-lens validate YYYY-MM-DD
 ```
 
 ## 8. 不变量

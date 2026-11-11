@@ -37,12 +37,12 @@ python3 collector/build_history.py
 
 # 灌库（按同一顺序；文件名由脚本按 as_of 生成）
 ./target/debug/fin-lens seed seeds/funds.sql
-./target/debug/fin-lens seed seeds/portfolio_<as_of>.sql
-./target/debug/fin-lens seed seeds/etf_lookthrough_<as_of>.sql
-./target/debug/fin-lens seed seeds/history_<as_of>.sql
+./target/debug/fin-lens seed seeds/portfolio_YYYY-MM-DD.sql
+./target/debug/fin-lens seed seeds/etf_lookthrough_YYYY-MM-DD.sql
+./target/debug/fin-lens seed seeds/history_YYYY-MM-DD.sql
 
 # 盘后单日验证（写 data/daily/YYYY-MM/YYYY-MM-DD.md + calibration 行）
-./target/debug/fin-lens validate <published-nav-date>
+./target/debug/fin-lens validate YYYY-MM-DD
 
 # 起服务：http://127.0.0.1:8787/
 FINLENS_DB=data/finlens.db FINLENS_BIND=127.0.0.1:8787 cargo run

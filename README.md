@@ -163,7 +163,7 @@ QDII 分支：A 股白天美股休市，只能用**上一夜美股收盘涨跌**
 
 ## 历史回溯与体检
 
-`collector/build_history.py` 回填一年历史净值 + 持仓个股/指数日线，写 `seeds/history_<as_of>.sql`：
+`collector/build_history.py` 回填一年历史净值 + 持仓个股/指数日线，写 `seeds/history_YYYY-MM-DD.sql`：
 
 - 基金历史净值来自 `pingzhongdata` 的 `Data_netWorthTrend`（一次请求拿全历史）。
 - 持仓个股/指数用 `push2his` kline（一年一次取完，前复权）。

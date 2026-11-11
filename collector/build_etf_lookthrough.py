@@ -14,7 +14,7 @@
 
 用法：
     python3 collector/build_etf_lookthrough.py [--refresh]
-    fin-lens seed seeds/etf_lookthrough_<as_of>.sql
+    fin-lens seed seeds/etf_lookthrough_YYYY-MM-DD.sql
 """
 
 from __future__ import annotations

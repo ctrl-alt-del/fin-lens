@@ -8,7 +8,7 @@
 用法：
     python3 collector/build_history.py [--refresh]
 
-产物：默认 `seeds/history_<as_of>.sql`，用 `fin-lens seed` 应用。
+产物：默认 `seeds/history_YYYY-MM-DD.sql`，用 `fin-lens seed` 应用。
 """
 
 from __future__ import annotations

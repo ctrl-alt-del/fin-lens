@@ -245,18 +245,18 @@ python3 collector/build_etf_lookthrough.py
 python3 collector/build_history.py
 
 ./target/debug/fin-lens seed seeds/funds.sql
-./target/debug/fin-lens seed seeds/portfolio_<as_of>.sql
-./target/debug/fin-lens seed seeds/etf_lookthrough_<as_of>.sql
-./target/debug/fin-lens seed seeds/history_<as_of>.sql
+./target/debug/fin-lens seed seeds/portfolio_YYYY-MM-DD.sql
+./target/debug/fin-lens seed seeds/etf_lookthrough_YYYY-MM-DD.sql
+./target/debug/fin-lens seed seeds/history_YYYY-MM-DD.sql
 ```
 
 默认输出：
 
 ```text
 seeds/funds.sql
-seeds/portfolio_<as_of>.sql
-seeds/etf_lookthrough_<as_of>.sql
-seeds/history_<as_of>.sql
+seeds/portfolio_YYYY-MM-DD.sql
+seeds/etf_lookthrough_YYYY-MM-DD.sql
+seeds/history_YYYY-MM-DD.sql
 ```
 
 可以用 `--private-dir`、`--portfolio`、`--out` 覆盖路径；脚本会自动发现唯一的
@@ -287,7 +287,7 @@ curl -s localhost:8787/api/lookthrough | jq '{weights_assumed_equal,attributed:.
 净值公布后（通常 20:00–23:00 CST）：
 
 ```bash
-./target/debug/fin-lens validate <published-nav-date>
+./target/debug/fin-lens validate YYYY-MM-DD
 ```
 
 它会：
