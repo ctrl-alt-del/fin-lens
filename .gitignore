@@ -1,0 +1,103 @@
+# ============================================================
+# FinLens — private data first
+# Anything that can identify a portfolio, its size, holdings,
+# costs, returns, or validation results stays local.
+# ============================================================
+
+# Rust
+/target
+**/*.rs.bk
+
+# Private inputs, generated SQL, databases, reports, state
+/data/private
+/data/private/
+/data/*.db
+/data/*.db-shm
+/data/*.db-wal
+/data/*.db-journal
+/data/daily/
+/data/ingest/
+/seeds/
+/state/
+/docs/dashboard-live.png
+/docs/*-live.png
+
+# Local notes / agent status
+AGENTS.local.md
+docs/*.local.md
+*.local.md
+*.local.json
+*.local.toml
+*.local.yaml
+*.local.yml
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+credentials*
+secrets*
+
+# Databases / exports / statements
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite3
+/exports/
+/statements/
+
+# Screenshots / media at repo root
+/*.png
+/*.jpg
+/*.jpeg
+/*.heic
+/*.mov
+/*.mp4
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Editor / OS / agent runtimes
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.iml
+*.code-workspace
+.fleet/
+.history/
+/.claude/
+/.codex/
+/.cursor/
+/.dsh/
+/.windsurf/
+
+# Local build cache
+/.cargo-home/
+/.cache/
+
+# Logs / temp
+*.log
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+__MACOSX/
