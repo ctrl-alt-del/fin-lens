@@ -9,36 +9,36 @@
       "name": "示例科技指数",
       "kind": "index",
       "sector": "科技",
-      "secid": "1.000300",
-      "source_symbol": "000300"
+      "secid": "1.000000",
+      "source_symbol": "000000"
     },
     "DEMO.ETF": {
       "name": "示例科技ETF",
       "kind": "etf",
       "sector": "科技",
-      "secid": "1.512760",
-      "source_symbol": "512760"
+      "secid": "1.000000",
+      "source_symbol": "000000"
     },
     "DEMO.HJ": {
       "name": "示例光模块A",
       "kind": "stock",
       "sector": "光模块",
-      "secid": "0.300308",
-      "source_symbol": "300308"
+      "secid": "0.000000",
+      "source_symbol": "000000"
     },
     "DEMO.XYS": {
       "name": "示例光模块B",
       "kind": "stock",
       "sector": "光模块",
-      "secid": "0.300502",
-      "source_symbol": "300502"
+      "secid": "0.000000",
+      "source_symbol": "000000"
     },
     "DEMO.SEMI": {
       "name": "示例半导体C",
       "kind": "stock",
       "sector": "半导体",
-      "secid": "1.688012",
-      "source_symbol": "688012"
+      "secid": "1.000000",
+      "source_symbol": "000000"
     }
   },
   "funds": [
@@ -63,9 +63,21 @@
       "tracking_beta": 0.9,
       "notes": "示例，不是真实基金",
       "holdings": [
-        ["DEMO.HJ", "示例光模块A", 0.098],
-        ["DEMO.XYS", "示例光模块B", 0.091],
-        ["DEMO.SEMI", "示例半导体C", 0.062]
+        [
+          "DEMO.HJ",
+          "示例光模块A",
+          0.098
+        ],
+        [
+          "DEMO.XYS",
+          "示例光模块B",
+          0.091
+        ],
+        [
+          "DEMO.SEMI",
+          "示例半导体C",
+          0.062
+        ]
       ]
     }
   ],
