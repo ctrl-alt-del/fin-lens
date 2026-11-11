@@ -259,6 +259,7 @@ seeds/etf_lookthrough_YYYY-MM-DD.sql
 seeds/history_YYYY-MM-DD.sql
 ```
 
+`history_YYYY-MM-DD.sql` 的日期用 portfolio 的 `as_of`；数据截止到 `validation_date`。
 可以用 `--private-dir`、`--portfolio`、`--out` 覆盖路径；脚本会自动发现唯一的
 `data/private/portfolio_*.json`，有多个时要求显式指定。
 

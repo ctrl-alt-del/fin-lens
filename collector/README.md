@@ -28,6 +28,7 @@ seeds/etf_lookthrough_YYYY-MM-DD.sql
 seeds/history_YYYY-MM-DD.sql
 ```
 
+`history_YYYY-MM-DD.sql` 的日期用 portfolio 的 `as_of`；数据截止到 `validation_date`。
 路径与日期都来自私有 JSON；可以用 `--private-dir`、`--portfolio`、`--funds`、`--out` 覆盖。
 详细字段见 [docs/onboarding.md](../docs/onboarding.md)。
 
