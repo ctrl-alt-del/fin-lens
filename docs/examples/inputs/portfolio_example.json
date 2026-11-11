@@ -1,0 +1,32 @@
+{
+  "_comment": "Fictional template. Copy to data/private/portfolio_<date>.json and replace DEMO codes with real fund codes.",
+  "as_of": "2026-11-06",
+  "nav_date": "2026-11-05",
+  "report_date": "2026-09-30",
+  "source": "manual",
+  "note": "示例组合，不是真实持仓",
+  "positions": [
+    {
+      "code": "DEMO01",
+      "market_value": 10000.0,
+      "cost_basis": 9500.0,
+      "pending_amount": 0.0,
+      "note": "示例：已知成本"
+    },
+    {
+      "code": "DEMO02",
+      "market_value": 5000.0,
+      "pnl_pct": 0.05,
+      "pending_amount": 0.0,
+      "note": "示例：由收益率反推成本"
+    }
+  ],
+  "new_funds": {},
+  "fetch_holdings": [],
+  "instruments": {},
+  "families": [],
+  "buckets": {
+    "broad_index": ["DEMO01"],
+    "semiconductor": ["DEMO02"]
+  }
+}

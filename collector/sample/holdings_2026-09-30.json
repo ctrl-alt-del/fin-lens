@@ -1,0 +1,39 @@
+{
+  "kind": "holdings",
+  "generated_at": "2026-11-06T10:00:00+08:00",
+  "source": "eastmoney",
+  "fund_code": "DEMO02",
+  "report_date": "2026-09-30",
+  "items": [
+    {
+      "instrument": "DEMO.HJ",
+      "name": "示例光模块A",
+      "sector": "光模块",
+      "weight": 0.098
+    },
+    {
+      "instrument": "DEMO.XYS",
+      "name": "示例光模块B",
+      "sector": "光模块",
+      "weight": 0.091
+    },
+    {
+      "instrument": "DEMO.SEMI",
+      "name": "示例半导体C",
+      "sector": "半导体",
+      "weight": 0.062
+    },
+    {
+      "instrument": "DEMO.STAR",
+      "name": "示例光芯片D",
+      "sector": "光芯片",
+      "weight": 0.048
+    },
+    {
+      "instrument": "DEMO.EQUIP",
+      "name": "示例半导体设备E",
+      "sector": "半导体设备",
+      "weight": 0.041
+    }
+  ]
+}

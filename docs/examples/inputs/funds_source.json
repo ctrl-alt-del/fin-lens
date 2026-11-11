@@ -1,0 +1,76 @@
+{
+  "_comment": "Fictional template. Copy to data/private/funds_source.json and replace DEMO codes with real 6-digit fund codes.",
+  "report_date": "2026-09-30",
+  "validation_date": "2026-11-05",
+  "snapshot_date": "2026-11-06",
+  "sector_map": {},
+  "instruments": {
+    "DEMO.IDX": {
+      "name": "示例科技指数",
+      "kind": "index",
+      "sector": "科技",
+      "secid": "1.000300",
+      "source_symbol": "000300"
+    },
+    "DEMO.ETF": {
+      "name": "示例科技ETF",
+      "kind": "etf",
+      "sector": "科技",
+      "secid": "1.512760",
+      "source_symbol": "512760"
+    },
+    "DEMO.HJ": {
+      "name": "示例光模块A",
+      "kind": "stock",
+      "sector": "光模块",
+      "secid": "0.300308",
+      "source_symbol": "300308"
+    },
+    "DEMO.XYS": {
+      "name": "示例光模块B",
+      "kind": "stock",
+      "sector": "光模块",
+      "secid": "0.300502",
+      "source_symbol": "300502"
+    },
+    "DEMO.SEMI": {
+      "name": "示例半导体C",
+      "kind": "stock",
+      "sector": "半导体",
+      "secid": "1.688012",
+      "source_symbol": "688012"
+    }
+  },
+  "funds": [
+    {
+      "code": "DEMO01",
+      "name": "示例指数联接基（假数据）",
+      "type": "etf_fund",
+      "mode": "transparent",
+      "category": "index_feeder",
+      "benchmark": "DEMO.IDX",
+      "tracking_beta": 0.95,
+      "notes": "示例，不是真实基金",
+      "holdings": []
+    },
+    {
+      "code": "DEMO02",
+      "name": "示例主动科技基（假数据）",
+      "type": "active",
+      "mode": "semi_transparent",
+      "category": "active_tech",
+      "benchmark": "DEMO.ETF",
+      "tracking_beta": 0.9,
+      "notes": "示例，不是真实基金",
+      "holdings": [
+        ["DEMO.HJ", "示例光模块A", 0.098],
+        ["DEMO.XYS", "示例光模块B", 0.091],
+        ["DEMO.SEMI", "示例半导体C", 0.062]
+      ]
+    }
+  ],
+  "ground_truth_pct": {
+    "DEMO01": 0.67,
+    "DEMO02": 1.01
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "quotes",
+  "generated_at": "2026-11-06T14:30:00+08:00",
+  "source": "eastmoney",
+  "trade_date": "2026-11-06",
+  "items": [
+    {
+      "instrument": "DEMO.IDX",
+      "name": "示例科技指数",
+      "price": 1024.50,
+      "pct_chg": 0.0120,
+      "quote_ts": "2026-11-06T14:30:00+08:00",
+      "source_symbol": "000300"
+    },
+    {
+      "instrument": "DEMO.ETF",
+      "name": "示例科技ETF",
+      "price": 1.512,
+      "pct_chg": 0.0120,
+      "quote_ts": "2026-11-06T14:30:00+08:00",
+      "source_symbol": "512760"
+    },
+    {
+      "instrument": "DEMO.HJ",
+      "name": "示例光模块A",
+      "price": 156.20,
+      "pct_chg": 0.0310,
+      "quote_ts": "2026-11-06T14:30:00+08:00",
+      "source_symbol": "300308"
+    },
+    {
+      "instrument": "DEMO.XYS",
+      "name": "示例光模块B",
+      "price": 88.40,
+      "pct_chg": -0.0080,
+      "quote_ts": "2026-11-06T14:30:00+08:00",
+      "source_symbol": "300502"
+    },
+    {
+      "instrument": "DEMO.SEMI",
+      "name": "示例半导体C",
+      "price": 42.10,
+      "pct_chg": 0.0101,
+      "quote_ts": "2026-11-06T14:30:00+08:00",
+      "source_symbol": "688012"
+    }
+  ]
+}

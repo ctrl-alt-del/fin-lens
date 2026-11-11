@@ -1,0 +1,15 @@
+{
+  "kind": "allocation",
+  "generated_at": "2026-11-06T10:00:00+08:00",
+  "source": "eastmoney",
+  "report_date": "2026-09-30",
+  "items": [
+    {
+      "fund_code": "DEMO02",
+      "stock_weight": 0.90,
+      "bond_weight": 0.0,
+      "cash_weight": 0.09,
+      "other_weight": 0.01
+    }
+  ]
+}

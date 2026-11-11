@@ -1,0 +1,22 @@
+{
+  "kind": "nav",
+  "generated_at": "2026-11-06T23:40:00+08:00",
+  "source": "eastmoney",
+  "trade_date": "2026-11-05",
+  "items": [
+    {
+      "fund_code": "DEMO01",
+      "fund_name": "示例·指数联接基",
+      "unit_nav": 1.5000,
+      "daily_pct": 0.0067,
+      "nav_date": "2026-11-05"
+    },
+    {
+      "fund_code": "DEMO02",
+      "fund_name": "示例·主动科技基",
+      "unit_nav": 2.0000,
+      "daily_pct": 0.0101,
+      "nav_date": "2026-11-05"
+    }
+  ]
+}
