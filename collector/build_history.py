@@ -162,8 +162,9 @@ def main(argv: list[str] | None = None) -> int:
     START = args.start or (
         datetime.strptime(AS_OF, "%Y-%m-%d") - timedelta(days=364)
     ).strftime("%Y-%m-%d")
+    file_as_of = args.as_of or pf.get("as_of") or AS_OF
     out_path = config.output_path(
-        args.out, config.seed_dir() / f"history_{AS_OF}.sql"
+        args.out, config.seed_dir() / f"history_{file_as_of}.sql"
     )
 
     funds = [f["code"] for f in fs["funds"]]
